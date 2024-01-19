@@ -316,8 +316,8 @@ body {background: vars.$bg-app}
 
 * {caret-color: var(--caret, rgb(var(--v-theme-primary)))}
 ::selection {
-  background-color: #ff4081;
-  color: vars.$bg-app;
+  background-color: vars.$primary;
+  color: #fff;
 }
 :-webkit-autofill {
   -webkit-text-fill-color: rgb(var(--v-theme-primary));

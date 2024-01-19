@@ -15,7 +15,7 @@
         </a>
       </aside>
 
-      <aside class="flex-center" style="gap: 10px;">
+      <aside class="flex-center ml-3" style="gap: 10px;">
         <v-btn class="bg-white">
           <img src="@/assets/sources/icons/discord.svg" alt="discord icon" class="mr-1" style="width: 20px;">
           Discord

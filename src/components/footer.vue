@@ -18,7 +18,7 @@
           :style="`--hover-color: ${item.hover}`"
         >
           <img v-if="item.img" :src="item.img" style="width: 21px;">
-          <v-icon v-else :icon="item.icon" />
+          <v-icon v-else :icon="item.icon" color="#fff" />
         </v-btn>
       </aside>
 
@@ -29,25 +29,28 @@
 
 <script setup>
 import discordImg from '@/assets/sources/icons/discord-white.svg'
+import variables from '@/mixins/variables';
 const
+  { discordLink, twitterLink, instagramLink } = variables,
+
 socials = [
   {
     img: discordImg,
     name: "discord",
     hover: "#5662f6",
-    to: "https://discord.com/invite/B9uYCDNVMc"
+    to: discordLink
   },
   {
     icon: "mdi-twitter",
     name: "twitter",
     hover: "#2ea5ed",
-    to: "https://twitter.com/eth_GoldenELF"
+    to: twitterLink
   },
   {
     icon: "mdi-instagram",
     name: "instagram",
     hover: "#b12f80",
-    to: "https://www.instagram.com/eth_goldenelf/"
+    to: instagramLink
   },
 ]
 </script>

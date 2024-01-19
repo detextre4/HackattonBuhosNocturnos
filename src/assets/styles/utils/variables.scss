@@ -7,7 +7,7 @@
   //------- sizes -------//
   --resizer: clamp(12px, 1vw, 16px);
   --resizer-mobile: clamp(10px, 1.5vw, 12px);
-  --margin-global: 9em; // too can use 6em
+  --margin-global: 6em; // too can use 6em
   @include media(max, small) {--margin-global: clamp(1em, 5vw, 4em)}
   --parent: 1600px;
   --subparent: 1900px;

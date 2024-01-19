@@ -41,7 +41,7 @@ export default createVuetify({
     mobileBreakpoint: 'sm',
     thresholds: {
       xs: 430,
-      sm: 980,
+      sm: 880,
       md: 1200,
       lg: 1440,
       xl: 1800,
@@ -52,7 +52,7 @@ export default createVuetify({
   defaults: {
     global: {},
     VBtn: {
-      style: 'text-transform: none; letter-spacing: normal; border-radius: 20px',
+      style: 'text-transform: none; letter-spacing: normal; border-radius: 30px',
       class: 'progress-inside'
     },
     VOtpInput: {
