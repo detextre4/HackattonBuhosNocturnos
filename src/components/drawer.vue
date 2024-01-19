@@ -2,86 +2,67 @@
   <v-navigation-drawer
     id="drawer"
     v-model="store.state.drawer"
-    :permanent="!mobile"
-    :touchless="!mobile"
     class="py-8 px-2"
+    :class="{ active: store.state.drawer}"
   >
     <v-list nav>
-      <div v-if="mobile" class="flex-jstart" style="gap: 10px">
-        <v-btn icon elevation="0" size="30">
-          <v-icon size="20">mdi-cog-outline</v-icon>
-        </v-btn>
-
-        <v-btn icon elevation="0" size="30">
-          <v-icon size="20">mdi-bell-outline</v-icon>
-        </v-btn>
+      <div class="flex-center">
+        <img
+          src="@/assets/sources/images/logo_gonden_elf.png"
+          alt="logo_gonden_elf logo"
+        >
       </div>
-
-
-      <div class="flex-acenter my-3 text-white" style="gap: 10px">
-        <v-avatar image="@/assets/sources/images/avatar.png" alt="avatar" />
-
-        <h6 class="mb-0">¡Hola detextre4!</h6>
-      </div>
-
-      <v-list-item
-        v-for="(item, i) in data" :key="i"
-        :title="item.name"
-        class="text-white"
-      >
-        <template #prepend>
-          <v-icon size="20" :icon="item.icon" />
-        </template>
-      </v-list-item>
     </v-list>
 
     <v-divider thickness="2" class="text-white mx-3 mb-4" />
 
     <v-list nav>
-      <v-btn
-        block
-        class="bg-primary w500"
-      >Cerrar sesión</v-btn>
-
-      <div class="flex-center">
-        <img
-          src="@/assets/sources/logos/logo.svg"
-          alt="logo"
-          class="mt-6"
-          style="width: min(130px, 100%)"
-        >
-      </div>
+      <v-list-item
+        v-for="(item, i) in store.state.navbarTabs" :key="i"
+        :href="`#${item}`"
+        :title="$t(`navbar.${item}`)"
+        class="text-white text-center"
+      />
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script setup>
 import { useStore } from 'vuex';
-import { useDisplay } from 'vuetify/lib/framework.mjs'
-const
-  store = useStore(),
-  { mobile } = useDisplay(),
-
-data = [
-  {
-    icon: "mdi-currency-usd",
-    name: "Mi perfil",
-  },
-  {
-    icon: "mdi-home-outline",
-    name: "Dashboard",
-    to: "Home"
-  },
-  {
-    icon: "mdi-file-document-outline",
-    name: "Mis casos",
-  },
-]
+const store = useStore()
 </script>
 
 <style scoped lang="scss">
 #drawer {
-  background-image: linear-gradient(#0b3f6b, #2a8ada);
+  background-image: linear-gradient(#111, #000);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 200px;
+    border-radius: 0 0 20px 20px;
+    background-color: #ffffff34;
+    filter: blur(100px);
+    scale: 0;
+    transition: .2s ease;
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 7px;
+    border-radius: 20px 20px 0 0;
+    background-color: #ffffff5d;
+    filter: blur(15px);
+    scale: 0;
+    transition: .2s ease;
+  }
+
+  &.active::before,
+  &.active::after { scale: 1 }
 
   .v-list-item {
     &-title { font-size: 15px }

@@ -1,5 +1,29 @@
 import store from '@/store'
 
+export function mapRanged(value, {fromMin, fromMax, toMin, toMax, invert = false}) {
+  // Mapea el valor de un rango a otro
+  let mappedValue =
+      ((value - fromMin) / (fromMax - fromMin)) * (toMax - toMin) + toMin;
+  // Asegúrate de que el valor mapeado esté dentro de los rangos toMin y toMax
+  mappedValue = Math.min(Math.max(mappedValue, toMin), toMax);
+  // Invierte los valores de retorno si se especifica invert como true
+  return invert ? toMax + toMin - mappedValue : mappedValue;
+}
+
+export function createObserver({ options, targets, handle }) {
+  options ??= {
+    root: null,
+    rootMargin: "0px",
+    threshold: buildThresholdList(),
+  };
+
+  const observer = new IntersectionObserver(handle, options);
+  if (targets instanceof HTMLElement) observer.observe(targets);
+  else targets.forEach(el => observer.observe(el))
+
+  return observer
+}
+
 /// Useful to set intersection threshold
 export function buildThresholdList() {
   const thresholds = [];

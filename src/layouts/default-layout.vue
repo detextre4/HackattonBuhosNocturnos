@@ -1,6 +1,9 @@
 <template>
   <v-app id="layout">
+    <Drawer />
+
     <v-main>
+      <Navbar />
       <Home />
       <Footer />
     </v-main>
@@ -9,7 +12,8 @@
 
 <script setup>
 import '@/assets/styles/layouts/default-layout.scss'
-import Home from '@/pages/landing/home.vue'
 import Drawer from '@/components/drawer.vue'
+import Navbar from '@/components/navbar.vue'
+import Home from '@/pages/landing/home.vue'
 import Footer from '@/components/footer.vue'
 </script>

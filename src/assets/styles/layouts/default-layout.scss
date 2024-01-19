@@ -5,6 +5,12 @@
 
 #layout {
   // overflow: hidden;
+  background: center no-repeat url('../../sources/images/bg.png');
+  background-color: rgb(var(--v-theme-background-app));
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background-image 300ms ease-in 200ms;
+  isolation: isolate;
 
   //- responsive font size -//
   & > * { font-size: var(--resizer) }

@@ -2,27 +2,22 @@ import { createStore } from 'vuex'
 
 const store = createStore({
   state: {
-    drawer: true,
+    drawer: false,
+    navbarTabs: [
+      "home",
+      "about",
+      "golden",
+      "nft",
+      "benefice",
+      "faq",
+    ],
     loader: false,
-    profile: {
-      uid: undefined,
-      username: undefined,
-      email: undefined,
-      avatar: undefined,
-    },
   },
   mutations: {
     setDrawer(state, value) { state.drawer = value },
     setLoader(state, value) { state.loader = value },
-    setProfile(state, profile) { state.profile = profile },
   },
   actions: {
-    // modalConnect() {
-    //   const layout = this.$router.app.$children
-    //     .find(data => data.$el === document.getElementById("layout"));
-
-    //   layout.$refs.connect.modalConnect = true
-    // },
   },
   getters: {
     pagination: () => ({items, currentPage, itemsPerPage, search, filterA}) => {

@@ -3,7 +3,7 @@
 //========== Variables ==========//
 :root {
   //------- fonts -------//
-  --font-1: 'Ubuntu', sans-serif;
+  --font-1: 'Poppins', sans-serif;
   //------- sizes -------//
   --resizer: clamp(12px, 1vw, 16px);
   --resizer-mobile: clamp(10px, 1.5vw, 12px);
@@ -11,7 +11,7 @@
   @include media(max, small) {--margin-global: clamp(1em, 5vw, 4em)}
   --parent: 1600px;
   --subparent: 1900px;
-  --h-navbar: 100px;
+  --h-navbar: 80px;
   @include media(max, small) {--h-navbar: 80px}
   --w-scroll: 4px;
   //------- shadows -------//

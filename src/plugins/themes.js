@@ -12,17 +12,15 @@ const defaultColors = {
 const light = {
   dark: false,
   colors: {
-    'background-app': '#f9fafa',
-    background: '#FFFFFF',
-    surface: '#FFFFFF',
-    foreground: '#000000',
+    'background-app': '#292e34',
+    background: '#000',
+    surface: '#000',
+    foreground: '#fff',
     label: '#6e6e6e',
 
-    primary: '#e15517',
-    'primary-darken-1': '#3700B3',
-    secondary: '#02a6d0',
-    'secondary-darken-1': '#018786',
-    accent: '#162c59',
+    primary: '#ffc107',
+    secondary: '#111',
+    accent: '#000',
 
     ...defaultColors,
   },

@@ -2,9 +2,7 @@ import Vue3Storage from "vue3-storage-secure";
 
 export const storageSecureCollection = {
   appIsLaunched: 'appIsLaunched',
-  uid: 'uid',
-  tokenAuth: 'tokenAuth',
-  rememberEmail: 'rmEmail',
+  language: 'language',
 }
 
 export default (app) => app.use(Vue3Storage, {

@@ -1,7 +1,6 @@
 <template>
   <div id="home" class="fill-height flex-center">
     <v-responsive class="align-center text-center pb-4">
-      <v-img height="100" :src="logo" />
 
       <div class="text-body-1 font-weight-light mb-n1">Welcome to</div>
       <h1 class="text-h1 font-weight-bold">Vuetify</h1>
@@ -17,7 +16,6 @@
 
 <script setup>
 import '@/assets/styles/pages/home.scss'
-import logo from '@/assets/sources/logos/logo.svg'
 import { ref } from 'vue';
 import { useToast } from 'vue-toastification';
 import ToastTitle from '@/components/toast-content/toast-title.vue';
