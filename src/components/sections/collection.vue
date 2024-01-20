@@ -5,27 +5,27 @@
       :bg-text="$t('collection.bgTextTitle')"
     />
 
-    <full-screen height="16.4375em" padding-block="1.25em" content-class="carousel">
-      <v-img-load
-        v-for="(img, i) in carousel"
-        :key="i"
-        :src="img"
-        max-width="13.9375em"
-        sizes="13.9375em"
-        rounded="20"
-      />
-    </full-screen>
+    <v-slide-group :show-arrows="false" class="carousel">
+      <v-slide-group-item v-for="(img, i) in carousel" :key="i">
+        <v-img-load
+          :src="img"
+          max-width="13.9375em"
+          sizes="13.9375em"
+          rounded="20"
+        />
+      </v-slide-group-item>
+    </v-slide-group>
     
-    <full-screen height="16.4375em" padding-block="1.25em" content-class="carousel">
-      <v-img-load
-        v-for="(img, i) in carousel2"
-        :key="i"
-        :src="img"
-        max-width="13.9375em"
-        sizes="13.9375em"
-        rounded="20"
-      />
-    </full-screen>
+    <v-slide-group :show-arrows="false" class="carousel">
+      <v-slide-group-item v-for="(img, i) in carousel2" :key="i">
+        <v-img-load
+          :src="img"
+          max-width="13.9375em"
+          sizes="13.9375em"
+          rounded="20"
+        />
+      </v-slide-group-item>
+    </v-slide-group>
   </section>
 </template>
 
@@ -57,10 +57,17 @@ function initialize() {
 <style lang="scss">
 #collection {
   .carousel {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    height: 16.4375em;
+    padding-block: 1.25em;
     overflow: hidden;
+
+    .v-slide-group__content {
+      gap: 20px;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 </style>
