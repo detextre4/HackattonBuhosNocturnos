@@ -1,4 +1,5 @@
-# default
+# HackattonBuhosNocturnos
+Hackatton 2024
 
 ## Project setup
 
