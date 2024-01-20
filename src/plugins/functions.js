@@ -1,12 +1,10 @@
 import store from '@/store'
 
 export function mapRanged(value, {fromMin, fromMax, toMin, toMax, invert = false}) {
-  // Mapea el valor de un rango a otro
   let mappedValue =
       ((value - fromMin) / (fromMax - fromMin)) * (toMax - toMin) + toMin;
-  // Asegúrate de que el valor mapeado esté dentro de los rangos toMin y toMax
+
   mappedValue = Math.min(Math.max(mappedValue, toMin), toMax);
-  // Invierte los valores de retorno si se especifica invert como true
   return invert ? toMax + toMin - mappedValue : mappedValue;
 }
 
