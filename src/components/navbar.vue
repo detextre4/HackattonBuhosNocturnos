@@ -59,7 +59,7 @@
         <v-btn
           icon
           size="38"
-          class="d-md-none bg-white"
+          class="toggle bg-white"
           @click="store.commit('setDrawer', true)"
         >
           <v-icon icon="mdi-menu" size="20" />
@@ -149,5 +149,9 @@ function changeLanguage(index) {
   }
 
   .logo { width: 60px }
+
+  .toggle {
+    @include media(min, small) { display: none }
+  }
 }
 </style>

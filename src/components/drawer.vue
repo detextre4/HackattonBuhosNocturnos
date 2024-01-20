@@ -3,6 +3,7 @@
     id="drawer"
     v-model="store.state.drawer"
     class="py-8 px-2"
+    disable-resize-watcher
     :class="{ active: store.state.drawer}"
   >
     <v-list nav>
