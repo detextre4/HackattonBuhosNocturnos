@@ -13,7 +13,7 @@ export function mapRanged(value, {fromMin, fromMax, toMin, toMax, invert = false
 export function createObserver({ options, targets, handle }) {
   options ??= {
     root: null,
-    rootMargin: "0px",
+    rootMargin: "112px",
     threshold: buildThresholdList(),
   };
 
@@ -27,7 +27,7 @@ export function createObserver({ options, targets, handle }) {
 /// Useful to set intersection threshold
 export function buildThresholdList() {
   const thresholds = [];
-  const numSteps = 20;
+  const numSteps = 2;
 
   for (let i = 1.0; i <= numSteps; i++) {
     const ratio = i / numSteps;

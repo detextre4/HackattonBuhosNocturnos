@@ -8,16 +8,23 @@
         <a
           v-for="(item, i) in store.state.navbarTabs"
           :key="i"
-          :href="`#${item}`"
+          :href="`#${item.name}`"
           class="hover-split"
-        >{{ $t(`navbar.${item}`) }}
-          <span v-for="n in 2" :key="n" class="mask"><span>{{ $t(`navbar.${item}`) }}</span></span>
+          :class="{ active: item.active }"
+        >{{ $t(`navbar.${item.name}`) }}
+          <span v-for="n in 2" :key="n" class="mask"><span>{{ $t(`navbar.${item.name}`) }}</span></span>
         </a>
       </aside>
 
       <aside class="flex-center ml-3" style="gap: 10px;">
-        <v-btn class="bg-white">
-          <img src="@/assets/sources/icons/discord.svg" alt="discord icon" class="mr-1" style="width: 20px;">
+        <v-btn
+          :href="discordLink"
+          target="_blank"
+          class="bg-white"
+          height="40"
+          style="font-size: 16px;"
+        >
+          <img src="@/assets/sources/icons/discord.svg" alt="discord icon" class="mr-2" style="width: 21px;">
           Discord
         </v-btn>
 
@@ -68,13 +75,14 @@ import EnIcon from '@/assets/sources/images/en.png'
 import { useI18n } from 'vue-i18n';
 import { useStorage } from 'vue3-storage-secure';
 import { storageSecureCollection } from '@/plugins/vue3-storage-secure'
-import { ref, onBeforeMount, onBeforeUnmount, onMounted } from 'vue';
+import { ref, onBeforeMount } from 'vue';
 import { useStore } from 'vuex';
-import { mapRanged } from '@/plugins/functions'
+import variables from '@/mixins/variables';
 const
   store = useStore(),
   storage = useStorage(),
   i18n = useI18n(),
+  { discordLink } = variables,
 
 language = ref('en'),
 languages = [
@@ -95,22 +103,6 @@ onBeforeMount(() => {
   language.value = storage.getStorageSync(storageSecureCollection.language) ?? 'en'
 })
 
-function updateNavbarColors(_) {
-  const value = mapRanged(document.documentElement.scrollTop, { fromMin: 0, fromMax: 100, toMin: 0, toMax: 1 }),
-  valueInverted = mapRanged(document.documentElement.scrollTop, { fromMin: 0, fromMax: 100, toMin: 0, toMax: 1, invert: true }),
-  navbar = document.querySelector('#navbar')
-
-  navbar.style.backgroundColor = `rgba(17, 17, 17, ${value})`
-  navbar.style.setProperty('--opacity-line', valueInverted)
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', updateNavbarColors)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', updateNavbarColors)
-})
 
 function changeLanguage(index) {
   const lang = languages[index].key
@@ -150,13 +142,12 @@ function changeLanguage(index) {
     @extend .parent;
 
     a {
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: 500;
       text-align: center;
     }
   }
 
-  .logo {
-    width: 60px;
-  }
+  .logo { width: 60px }
 }
 </style>

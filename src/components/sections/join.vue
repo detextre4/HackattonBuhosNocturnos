@@ -1,5 +1,5 @@
 <template>
-  <section id="join">
+  <section id="join" class="pt-16">
     <text-title
       :bg-text="$t('join.bgTextTitle')"
     />

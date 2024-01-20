@@ -142,7 +142,7 @@
     &>* { transform: translateY(-$split-position) !important }
   }
   // === hover effect =====
-  &:is(:hover, :active) {
+  &:is(:hover, :active, .active) {
     .mask { color: #fff !important; transform: skewX(12deg) translateX(5px) !important }
     .mask + .mask { transform: skewX(12deg) translateX(-5px) !important }
     &::before { transform: scale(1) !important }

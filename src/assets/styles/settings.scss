@@ -254,7 +254,7 @@
 //---------------------------------------------------------------------------------------------//
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--h-navbar) + 2em);
+  scroll-padding-top: var(--h-navbar);
 }
 body {
   text-rendering: optimizeLegibility;

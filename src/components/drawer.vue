@@ -19,8 +19,9 @@
     <v-list nav>
       <v-list-item
         v-for="(item, i) in store.state.navbarTabs" :key="i"
-        :href="`#${item}`"
-        :title="$t(`navbar.${item}`)"
+        :href="`#${item.name}`"
+        :title="$t(`navbar.${item.name}`)"
+        :active="item.active"
         class="text-white text-center"
       />
     </v-list>

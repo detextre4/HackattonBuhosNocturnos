@@ -5,11 +5,11 @@ export default {
     button: "Ir a inicio"
   },
   navbar: {
-    home: "Inicio",
+    hero: "Inicio",
     about: "Acerca de",
-    golden: "Golden Elf",
-    nft: "NFTs",
-    benefice: "Beneficios",
+    roadMap: "Golden Elf",
+    collection: "NFTs",
+    benefits: "Beneficios",
     faq: "FAQ"
   },
   hero: {
@@ -17,7 +17,7 @@ export default {
     desc: ({ values }) => `Golden Elf es una colección privada de NFTs, objetos de colección digitales únicos.<br><br> Síguenos en las redes sociales en <a href=${values.twitter} target='_blank'>Twitter</a> y <a href=${values.instagram} target='_blank'>Instagram</a>, para conocer el lanzamiento de las ediciones.`,
     accent: "¡EL PRÓXIMO LANZAMIENTO LLEGARÁ MUY PRONTO; SOLO FALTAN UNAS SEMANAS.!"
   },
-  history: {
+  about: {
     textTitle: "Nuestra Historia",
     bgTextTitle: "quienes somos",
     title: "Bienvenidos a Golden Elf.",

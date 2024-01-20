@@ -1,23 +1,23 @@
 <template>
-  <section id="history" class="mb-16">
+  <section id="about">
     <text-title
-      :text="$t('history.textTitle')"
-      :bg-text="$t('history.bgTextTitle')"
+      :text="$t('about.textTitle')"
+      :bg-text="$t('about.bgTextTitle')"
     />
 
-    <div id="history__content" class="flex-center flex-wrap" style="gap: clamp(30px, 5vw, 80px);">
-      <img id="history-img" src="@/assets/sources/miscellaneous/IMG-9719.png">
+    <div id="about__content" class="flex-center flex-wrap" style="gap: clamp(30px, 5vw, 80px);">
+      <img id="about-img" src="@/assets/sources/miscellaneous/IMG-9719.png">
 
       <aside class="flex-column">
-        <h2 class="text-center text-md-start" v-html="$t('history.title')" />
-        <p class="text-center text-md-start" v-html="$t(`history.desc`)" />
+        <h2 class="text-center text-md-start" v-html="$t('about.title')" />
+        <p class="text-center text-md-start" v-html="$t(`about.desc`)" />
         <v-btn
           height="51.59"
           class="text-white mx-auto ml-md-0 px-7 custom-elevation"
           append-icon="mdi-chevron-right"
           :href="discordLink"
           target="_blank"
-        >{{ $t('history.btn') }}</v-btn>
+        >{{ $t('about.btn') }}</v-btn>
       </aside>
     </div>
   </section>
@@ -30,7 +30,7 @@ const { discordLink } = variables
 </script>
 
 <style lang="scss">
-#history {
+#about {
   &-img {
     width: min(100%, 516px);
     border-radius: 30px;

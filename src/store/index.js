@@ -4,18 +4,43 @@ const store = createStore({
   state: {
     drawer: false,
     navbarTabs: [
-      "home",
-      "about",
-      "golden",
-      "nft",
-      "benefice",
-      "faq",
+      {
+        name: "hero",
+        active: false
+      },
+      {
+        name: "about",
+        active: false
+      },
+      {
+        name: "roadMap",
+        active: false
+      },
+      {
+        name: "collection",
+        active: false
+      },
+      {
+        name: "benefits",
+        active: false
+      },
+      {
+        name: "faq",
+        active: false
+      }
     ],
     loader: false,
   },
   mutations: {
     setDrawer(state, value) { state.drawer = value },
     setLoader(state, value) { state.loader = value },
+    setNavbarTabs(state, name) {
+      const element = state.navbarTabs.find(e => e.name === name)
+      if (element.active) return
+
+      state.navbarTabs.forEach(e => e.active = false)
+      element.active = true
+    }
   },
   actions: {
   },

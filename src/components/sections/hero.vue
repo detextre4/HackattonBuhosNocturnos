@@ -56,7 +56,7 @@ $media: 760px;
     --gap: 70px;
     flex-direction: column-reverse;
     height: auto;
-    margin-block: 64px 0;
+    padding-block: 64px 0;
   }
 
   > * { flex: 1 1 calc(50% - var(--gap)) }

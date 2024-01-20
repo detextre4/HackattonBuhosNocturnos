@@ -1,5 +1,5 @@
 <template>
-  <section id="collection" class="mb-16">
+  <section id="collection" class="pt-16">
     <text-title
       :text="$t('collection.textTitle')"
       :bg-text="$t('collection.bgTextTitle')"

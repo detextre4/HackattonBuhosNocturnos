@@ -1,11 +1,11 @@
 <template>
-  <section id="road-map" class="mb-16">
+  <section id="roadMap" class="pt-16">
     <text-title
       text="Golden Elf"
       bg-text="COLECCIÓN NFTS"
     />
 
-    <div id="road-map__content">
+    <div id="roadMap__content">
       <template v-for="(img, i) in steps" :key="i">
         <span
           class="step-id"
@@ -36,7 +36,7 @@ steps = [stepImg1, stepImg2, stepImg3, stepImg4, stepImg5]
 </script>
 
 <style lang="scss">
-#road-map {
+#roadMap {
   $accent: #0000004D;
   $width-line: 3.149375em;
   $width-circle: 0.375em;
