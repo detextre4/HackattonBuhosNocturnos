@@ -1,16 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden Elf</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Golden Elf</title>
-</head>
+  <body>
+    <div id="onload">
+      <span class="loader"></span>
+    </div>
 
-<body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
-</body>
-
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      window.onload = function() {
+        $('#onload').fadeOut()
+        $('html').removeClass('overflow')
+      };
+    </script>
+  </body>
 </html>
+
+<style lang="scss" scoped>
+body { background-color: #292e34 }
+.overflow { overflow: hidden }
+#onload {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100dvh;
+  background-color: #292e34;
+  z-index: 99;
+}
+.loader {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #FFF;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+</style>

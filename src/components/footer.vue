@@ -63,6 +63,7 @@ socials = [
   transition: 0.5s $ease-return;
   background-color: transparent;
   width: 100%;
+  pointer-events: none;
   @extend .margin-global;
 
   &__wrapper {
@@ -71,6 +72,7 @@ socials = [
 
   h6 {
     color: #FAFAFACC;
+    pointer-events: all;
   }
 
   .v-btn:hover { background-color: var(--hover-color) !important }
