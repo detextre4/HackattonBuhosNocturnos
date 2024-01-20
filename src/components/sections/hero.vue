@@ -1,5 +1,5 @@
 <template>
-  <section id="hero" class="flex-center flex-wrap-reverse" style="--gap: clamp(30px, 5vw, 80px)">
+  <section id="hero" class="flex-center">
     <aside class="hero-images">
       <div id="hero-img-1">
         <img src="@/assets/sources/collections/elf_1.jpg" data-depth="0.2">
@@ -45,21 +45,31 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
+$media: 760px;
+
 #hero {
+  --gap: clamp(30px, 5vw, 80px);
   gap: var(--gap);
   height: calc(100dvh - var(--h-navbar));
+
+  @media (max-width: $media) {
+    --gap: 70px;
+    flex-direction: column-reverse;
+    height: auto;
+    margin-block: 64px 0;
+  }
 
   > * { flex: 1 1 calc(50% - var(--gap)) }
 
   .hero-images {
     position: relative;
     min-width: 290px;
-    max-width: 500px;
-    height: 300px;
-    flex-basis: 450px;
+    max-width: 31.25em;
+    height: 18.75em;
+    flex-basis: 28.125em;
 
     img {
-      width: min(100%, 220px);
+      width: min(100%, 13.75em);
       border-radius: 20px;
       box-shadow: 3px 3px 8px 0px rgb(0, 0, 0, .2);
     }
@@ -68,17 +78,18 @@ onMounted(() => {
   &-img-1 {
     position: absolute;
     top: 0;
-    left: 50px;
+    left: 3.125em;
   }
   &-img-2 {
     position: absolute;
-    top: 100px;
+    top: 6.25em;
     left: 0;
   }
   &-img-3 {
     position: absolute;
-    top: 50px;
-    left: 250px;
+    top: 3.125em;
+    left: 15.625em;
+    @media (max-width: $media) { left: 12.625em }
   }
 }
 </style>

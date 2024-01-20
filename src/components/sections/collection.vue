@@ -58,6 +58,7 @@ function initialize() {
 #collection {
   .carousel {
     display: flex;
+    justify-content: center;
     gap: 20px;
     overflow: hidden;
   }

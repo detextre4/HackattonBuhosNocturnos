@@ -1,7 +1,7 @@
 <template>
   <nav id="navbar" class="flex-center">
     <div id="navbar__wrapper" class="d-flex justify-space-between">
-      <img src="@/assets/sources/images/logo_gonden_elf.png" alt="logo_gonden_elf logo">
+      <img class="logo" src="@/assets/sources/images/logo_gonden_elf.svg" alt="logo_gonden_elf logo">
 
       <aside class="d-md-flex flex-center d-none" style="gap: 20px;">
         
@@ -153,6 +153,10 @@ function changeLanguage(index) {
       font-size: 14px;
       text-align: center;
     }
+  }
+
+  .logo {
+    width: 60px;
   }
 }
 </style>
