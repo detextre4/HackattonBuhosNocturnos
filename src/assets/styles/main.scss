@@ -10,3 +10,11 @@
 
 //===================================== global ======================================//
 
+#floating-action-button {
+  $distance: 20px;
+  position: fixed;
+  bottom: $distance;
+  right: $distance;
+  font-size: 20px !important;
+  background-color: rgb(255, 193, 7, .8) !important;
+}
