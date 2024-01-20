@@ -8,6 +8,7 @@ export default {
   discordLink: "https://discord.com/invite/B9uYCDNVMc",
   twitterLink: "https://twitter.com/eth_GoldenELF",
   instagramLink: "https://www.instagram.com/eth_goldenelf/",
+  napoleonGroupLink: "https://www.gruponapoleon.com",
   appIsLaunched() {
     return useStorage().getStorageSync(storageSecureCollection.appIsLaunched)
   },

@@ -1,11 +1,11 @@
 <template>
-  <section id="history">
+  <section id="history" class="mb-16">
     <text-title
       :text="$t('history.textTitle')"
       :bg-text="$t('history.bgTextTitle')"
     />
 
-    <div class="flex-center flex-wrap" style="gap: clamp(30px, 5vw, 80px);">
+    <div id="history__content" class="flex-center flex-wrap" style="gap: clamp(30px, 5vw, 80px);">
       <img id="history-img" src="@/assets/sources/miscellaneous/IMG-9719.png">
 
       <aside class="flex-column">
@@ -13,7 +13,7 @@
         <p class="text-center text-md-start" v-html="$t(`history.desc`)" />
         <v-btn
           height="51.59"
-          class="text-white mx-auto ml-md-0 px-7"
+          class="text-white mx-auto ml-md-0 px-7 custom-elevation"
           append-icon="mdi-chevron-right"
           :href="discordLink"
           target="_blank"
@@ -37,14 +37,16 @@ const { discordLink } = variables
     box-shadow: 2px 2px 6px 0px rgb(0, 0, 0, .2);
   }
 
-  aside {
-    max-width: 660px;
-    @media (min-width: 1180px) and (max-width: 1200px) { width: 470px; }
-  }
+  &__content {
+    aside {
+      max-width: 660px;
+      @media (min-width: 1180px) and (max-width: 1200px) { width: 470px; }
+    }
 
-  .v-btn {
-    font-size: 16px;
-    font-weight: 500;
+    .v-btn {
+      font-size: 16px;
+      font-weight: 500;
+    }
   }
 }
 </style>

@@ -3,26 +3,27 @@
     id="footer"
     app absolute
     class="flex-center"
+    height="300"
   >
     <div id="footer__wrapper">
-      <aside class="flex-center mb-4" style="gap: 15px;">
+      <aside class="d-flex flex-center mb-10" style="gap: 20px;">
         <v-btn
           v-for="(item, i) in socials"
           :key="i"
           icon
-          size="40"
+          size="52"
           :icon="item.icon"
           :href="item.to"
           target="_blank"
-          color="rgba(255, 255, 255, .4)"
+          color="#5F6267"
           :style="`--hover-color: ${item.hover}`"
         >
-          <img v-if="item.img" :src="item.img" style="width: 21px;">
-          <v-icon v-else :icon="item.icon" color="#fff" />
+          <img v-if="item.img" :src="item.img" style="width: 28px;">
+          <v-icon v-else :icon="item.icon" color="#fff" size="25" />
         </v-btn>
       </aside>
 
-      <h6 class="text-center">Copyright © 2022 Grupo NapoleoN. All Rights Reserved.</h6>
+      <h6 v-html="$t('footer.copy', { link: napoleonGroupLink })" class="text-center w500" />
     </div>
   </v-footer>
 </template>
@@ -31,7 +32,7 @@
 import discordImg from '@/assets/sources/icons/discord-white.svg'
 import variables from '@/mixins/variables';
 const
-  { discordLink, twitterLink, instagramLink } = variables,
+  { discordLink, twitterLink, instagramLink, napoleonGroupLink } = variables,
 
 socials = [
   {
@@ -61,10 +62,15 @@ socials = [
 #footer {
   transition: 0.5s $ease-return;
   background-color: transparent;
+  width: 100%;
   @extend .margin-global;
 
   &__wrapper {
     @extend .parent;
+  }
+
+  h6 {
+    color: #FAFAFACC;
   }
 
   .v-btn:hover { background-color: var(--hover-color) !important }

@@ -1,7 +1,7 @@
 <template>
   <div class="text-title mb-10">
     <span>{{ bgText ?? text }}</span>
-    <h3 class="mb-0">{{ text }}</h3>
+    <h3 v-if="text" class="mb-0">{{ text }}</h3>
   </div>
 </template>
 
@@ -22,6 +22,7 @@ defineProps({
 .text-title {
   display: grid;
   grid-template-areas: stack;
+  place-content: center;
   > * { grid-area: stack }
   
   > span {
@@ -43,6 +44,7 @@ defineProps({
     place-content: center;
     align-self: center;
     justify-self: center;
+    text-align: center;
     text-transform: none;
     color: #fff;
     isolation: isolate;
