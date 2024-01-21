@@ -42,16 +42,16 @@ import img9 from '@/assets/sources/collections/elf_9.jpg'
 import img10 from '@/assets/sources/collections/elf_10.jpg'
 import img11 from '@/assets/sources/collections/elf_11.jpg'
 import img12 from '@/assets/sources/collections/elf_12.jpg'
-import { onMounted } from 'vue'
+// import { onMounted } from 'vue'
 const
 carousel = [img1, img2, img3, img4, img5, img6],
 carousel2 = [img7, img8, img9, img10, img11, img12]
 
-onMounted(initialize)
+// onMounted(initialize)
 
-function initialize() {
-  console.log("todo here");
-}
+// function initialize() {
+//   console.log("todo here");
+// }
 </script>
 
 <style lang="scss">
