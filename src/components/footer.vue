@@ -70,9 +70,10 @@ socials = [
     @extend .parent;
   }
 
+  * { pointer-events: all }
+
   h6 {
     color: #FAFAFACC;
-    pointer-events: all;
   }
 
   .v-btn:hover { background-color: var(--hover-color) !important }
